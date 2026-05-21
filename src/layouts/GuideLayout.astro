@@ -1,0 +1,60 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Toc from '../components/Toc.astro';
+import { sections } from '../data/sidebar';
+
+interface Heading {
+	depth: number;
+	slug: string;
+	text: string;
+}
+interface Props {
+	title: string;
+	description?: string;
+	slug: string;
+	headings: Heading[];
+}
+const { title, description, slug, headings } = Astro.props;
+
+const section = sections.find((s) =>
+	s.groups.some((g) => g.items.some((i) => i.slug === slug))
+);
+const group = section?.groups.find((g) => g.items.some((i) => i.slug === slug));
+const itemLabel = group?.items.find((i) => i.slug === slug)?.label ?? title;
+---
+
+<BaseLayout title={`${title} — 언웹스 가이드센터`} description={description}>
+	<Header section={section?.label ?? '가이드센터'} />
+	<div class="layout">
+		<Sidebar currentSlug={slug} />
+		<main class="main">
+			<div class="main-inner">
+				<nav class="breadcrumb">
+					<a href="/">가이드센터</a>
+					{section && (
+						<>
+							<span class="sep">›</span>
+							<a href="/">{section.label}</a>
+						</>
+					)}
+					{group && (
+						<>
+							<span class="sep">›</span>
+							<span>{group.label}</span>
+						</>
+					)}
+					<span class="sep">›</span>
+					<span>{itemLabel}</span>
+				</nav>
+
+				<article class="article">
+					<h1>{title}</h1>
+					<slot />
+				</article>
+			</div>
+		</main>
+		<Toc headings={headings} />
+	</div>
+</BaseLayout>

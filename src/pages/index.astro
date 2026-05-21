@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { sections } from '../data/sidebar';
+---
+
+<BaseLayout title="언웹스 가이드센터" description="기업·병원·소개형 홈페이지 운영자를 위한 실무 가이드.">
+	<Header section="가이드센터" />
+	<div class="layout">
+		<Sidebar />
+		<main class="main">
+			<div class="main-inner">
+				<article class="article">
+					<h1>가이드센터</h1>
+					<blockquote>
+						<p>
+							기업·병원·소개형 홈페이지를 직접 운영하는 분들을 위한 실무 가이드입니다. 아임웹·WordPress·SEO·도메인까지, 운영하며 실제로 부딪히는 문제 위주로 정리했습니다.
+						</p>
+					</blockquote>
+
+					{sections.map((section) => (
+						<>
+							<h2 id={section.label}>{section.label}</h2>
+							{section.groups.map((group) => (
+								<>
+									<h3>{group.label}</h3>
+									<ul>
+										{group.items.map((item) => (
+											<li><a href={`/guides/${item.slug}/`}>{item.label}</a></li>
+										))}
+									</ul>
+								</>
+							))}
+						</>
+					))}
+				</article>
+			</div>
+		</main>
+		<aside class="toc"></aside>
+	</div>
+</BaseLayout>

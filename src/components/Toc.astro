@@ -1,0 +1,49 @@
+---
+interface Heading {
+	depth: number;
+	slug: string;
+	text: string;
+}
+interface Props {
+	headings: Heading[];
+}
+const { headings } = Astro.props;
+const filtered = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+---
+
+<aside class="toc">
+	<p class="toc-title">목차</p>
+	<ul>
+		{filtered.map((h) => (
+			<li>
+				<a href={`#${h.slug}`} class:list={[{ 'toc-h3': h.depth === 3 }]}>
+					{h.text}
+				</a>
+			</li>
+		))}
+	</ul>
+</aside>
+
+<script>
+	const tocLinks = document.querySelectorAll<HTMLAnchorElement>('.toc a[href^="#"]');
+	const sections = Array.from(tocLinks)
+		.map((a) => {
+			const id = a.getAttribute('href')?.slice(1);
+			return id ? document.getElementById(id) : null;
+		})
+		.filter((el): el is HTMLElement => Boolean(el));
+
+	function updateToc() {
+		let activeId: string | null = null;
+		const threshold = 100;
+		for (const sec of sections) {
+			const rect = sec.getBoundingClientRect();
+			if (rect.top - threshold <= 0) activeId = sec.id;
+		}
+		tocLinks.forEach((a) => {
+			a.classList.toggle('active', a.getAttribute('href') === '#' + activeId);
+		});
+	}
+	window.addEventListener('scroll', updateToc, { passive: true });
+	updateToc();
+</script>

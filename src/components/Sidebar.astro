@@ -1,0 +1,49 @@
+---
+import { sections } from '../data/sidebar';
+
+interface Props {
+	currentSlug?: string;
+}
+const { currentSlug = '' } = Astro.props;
+
+// 현재 글이 속한 section 찾기 (없으면 첫 번째)
+const activeSection = sections.find((s) =>
+	s.groups.some((g) => g.items.some((i) => i.slug === currentSlug))
+) ?? sections[0];
+---
+
+<aside class="sidebar">
+	{sections.map((section) => (
+		<div class="sidebar-section">
+			<h2 class="sidebar-title">
+				<a href={`#${section.label}`} data-section={section.label}>{section.label}</a>
+			</h2>
+			{section.label === activeSection.label && section.groups.map((group) => (
+				<div class="sidebar-group">
+					<div class="sidebar-group-title">
+						{group.label}
+						<span class="arrow">▾</span>
+					</div>
+					<ul class="sidebar-sub">
+						{group.items.map((item) => (
+							<li>
+								<a
+									href={`/guides/${item.slug}/`}
+									class:list={[{ active: currentSlug === item.slug }]}
+								>
+									{item.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	))}
+</aside>
+
+<script>
+	document.querySelectorAll<HTMLDivElement>('.sidebar-group-title').forEach((t) => {
+		t.addEventListener('click', () => t.parentElement?.classList.toggle('collapsed'));
+	});
+</script>

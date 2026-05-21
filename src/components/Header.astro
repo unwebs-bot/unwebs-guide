@@ -1,0 +1,87 @@
+---
+interface Props {
+	section?: string;
+}
+const { section = '아임웹 운영' } = Astro.props;
+---
+
+<header class="gnb">
+	<a href="/" class="gnb-logo">unwebs<span class="accent">.</span> 가이드센터</a>
+	<span class="gnb-divider">/</span>
+	<span class="gnb-section">{section}</span>
+	<div class="gnb-spacer"></div>
+	<div class="search-wrap">
+		<input id="search-input" class="gnb-search" type="search" placeholder="가이드 검색 (예: 네임서버, SEO)" autocomplete="off" />
+		<div id="search-results" class="search-results" hidden></div>
+	</div>
+</header>
+
+<script>
+	declare global {
+		interface Window {
+			pagefind?: {
+				search: (q: string) => Promise<{ results: PagefindResultMeta[] }>;
+			};
+		}
+	}
+	interface PagefindResultMeta {
+		id: string;
+		data: () => Promise<{
+			url: string;
+			meta: { title?: string };
+			excerpt: string;
+		}>;
+	}
+
+	const input = document.getElementById('search-input') as HTMLInputElement | null;
+	const results = document.getElementById('search-results') as HTMLDivElement | null;
+	if (input && results) {
+		let timeout: ReturnType<typeof setTimeout> | null = null;
+		async function loadPagefind() {
+			if (window.pagefind) return window.pagefind;
+			try {
+				// @ts-ignore — Pagefind 인덱스는 빌드 후 /pagefind/ 에 생성됨
+				const mod = await import(/* @vite-ignore */ '/pagefind/pagefind.js');
+				window.pagefind = mod;
+				return mod;
+			} catch {
+				return null;
+			}
+		}
+		input.addEventListener('input', () => {
+			if (timeout) clearTimeout(timeout);
+			const q = input.value.trim();
+			if (!q) {
+				results.hidden = true;
+				results.innerHTML = '';
+				return;
+			}
+			timeout = setTimeout(async () => {
+				const pf = await loadPagefind();
+				if (!pf) {
+					results.hidden = false;
+					results.innerHTML =
+						'<div class="search-empty">검색 인덱스가 빌드되지 않았어요. <code>npm run build</code> 후 사용 가능.</div>';
+					return;
+				}
+				const search = await pf.search(q);
+				const top = search.results.slice(0, 8);
+				const items = await Promise.all(top.map((r: PagefindResultMeta) => r.data()));
+				results.hidden = false;
+				results.innerHTML = items.length
+					? items
+							.map(
+								(i) =>
+									`<a class="search-item" href="${i.url}"><strong>${i.meta.title ?? i.url}</strong><span>${i.excerpt}</span></a>`
+							)
+							.join('')
+					: '<div class="search-empty">검색 결과 없음.</div>';
+			}, 150);
+		});
+		document.addEventListener('click', (e) => {
+			if (!(e.target as HTMLElement).closest('.search-wrap')) {
+				results.hidden = true;
+			}
+		});
+	}
+</script>

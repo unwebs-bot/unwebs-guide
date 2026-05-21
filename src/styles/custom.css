@@ -1,0 +1,461 @@
+/* ============================================
+   언웹스 가이드센터 — preview HTML 정밀 매칭
+   preview/guide-preview.html 값 그대로 옮김
+   ============================================ */
+
+/* preview 변수 */
+:root,
+:root[data-theme='light'],
+:root[data-theme='dark'] {
+	--uw-bg: #ffffff;
+	--uw-bg-soft: #fafafa;
+	--uw-bg-code: #f4f4f5;
+	--uw-text: #1a1a1a;
+	--uw-text-soft: #555555;
+	--uw-text-mute: #888888;
+	--uw-border: #e8e8e8;
+	--uw-border-soft: #f0f0f0;
+	--uw-accent: #2563eb;
+	--uw-accent-hover: #1d4ed8;
+	--uw-accent-bg: #eff6ff;
+	--uw-highlight: #fde68a;
+
+	/* Starlight 변수 라이트로 강제 */
+	--sl-color-white: #1a1a1a;
+	--sl-color-gray-1: #2d2d2d;
+	--sl-color-gray-2: #555555;
+	--sl-color-gray-3: #888888;
+	--sl-color-gray-4: #aaaaaa;
+	--sl-color-gray-5: #d4d4d8;
+	--sl-color-gray-6: #e8e8e8;
+	--sl-color-gray-7: #fafafa;
+	--sl-color-black: #ffffff;
+	--sl-color-accent-low: #eff6ff;
+	--sl-color-accent: #2563eb;
+	--sl-color-accent-high: #1d4ed8;
+	--sl-color-bg: #ffffff;
+	--sl-color-bg-nav: rgba(255, 255, 255, 0.85);
+	--sl-color-bg-sidebar: #ffffff;
+	--sl-color-bg-inline-code: #f4f4f5;
+	--sl-color-bg-accent: #2563eb;
+	--sl-color-text: #1a1a1a;
+	--sl-color-text-accent: #2563eb;
+	--sl-color-hairline: #e8e8e8;
+	--sl-color-hairline-light: #f0f0f0;
+	--sl-color-hairline-shade: #e8e8e8;
+
+	--sl-font: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+		'Segoe UI', sans-serif;
+
+	/* preview 레이아웃 값 */
+	--sl-nav-height: 56px;
+	--sl-nav-pad-x: 28px;
+	--sl-sidebar-width: 260px;
+	--sl-content-width: 760px;
+	--sl-content-pad-x: 56px;
+
+	--sl-text-base: 1rem;
+	--sl-line-height: 1.7;
+}
+
+/* ============ Base ============ */
+html,
+body {
+	background: var(--uw-bg);
+	color: var(--uw-text);
+	font-size: 16px;
+	line-height: 1.7;
+	letter-spacing: -0.02em;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* 다크 토글 숨김 */
+starlight-theme-select {
+	display: none !important;
+}
+
+/* ============ Top GNB ============ */
+header.header {
+	background: rgba(255, 255, 255, 0.85) !important;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border-bottom: 1px solid var(--uw-border) !important;
+	height: 56px !important;
+}
+.site-title {
+	font-size: 16px !important;
+	font-weight: 700 !important;
+	letter-spacing: -0.04em !important;
+	color: var(--uw-text) !important;
+}
+
+/* ============ Sidebar (좌) ============ */
+
+/* 사이드바 외곽 — preview의 28px 좌측 패딩 */
+.sidebar-pane {
+	background: var(--uw-bg) !important;
+	border-right: 1px solid var(--uw-border) !important;
+}
+.sidebar-content {
+	padding: 32px 16px 32px 28px !important;
+	font-size: 14px !important;
+}
+
+/* top-level 컨테이너 */
+.sidebar-content ul.top-level {
+	gap: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+/* 1차 그룹 (아임웹 운영) — 큰 라벨 */
+.sidebar-content > ul.top-level > li > details > summary {
+	padding: 8px 0 16px !important;
+	margin: 0 !important;
+	cursor: pointer;
+}
+.sidebar-content > ul.top-level > li > details > summary .group-label-text {
+	font-weight: 700 !important;
+	font-size: 16px !important;
+	color: var(--uw-text) !important;
+	letter-spacing: -0.03em !important;
+}
+
+/* 2차 그룹 (도메인·SSL·메일 등) */
+.sidebar-content ul ul li > details > summary {
+	padding: 8px 12px 8px 0 !important;
+	margin: 0 !important;
+}
+.sidebar-content ul ul li > details > summary .group-label-text {
+	font-weight: 600 !important;
+	font-size: 14px !important;
+	color: var(--uw-text) !important;
+	letter-spacing: -0.02em !important;
+}
+
+/* 화살표 색 */
+.sidebar-content details > summary .caret {
+	color: var(--uw-text-mute) !important;
+}
+
+/* 사이드바 글 링크 — "—" 프리픽스 + 짧은 라벨 */
+.sidebar-content ul ul ul li {
+	position: relative;
+	list-style: none !important;
+}
+.sidebar-content ul ul ul li::before {
+	content: '—';
+	position: absolute;
+	left: 4px;
+	top: 6px;
+	color: var(--uw-text-mute);
+	font-size: 11px;
+	pointer-events: none;
+}
+.sidebar-content ul ul ul a {
+	display: block;
+	padding: 6px 0 6px 20px !important;
+	color: var(--uw-text-soft) !important;
+	font-size: 13.5px !important;
+	line-height: 1.5 !important;
+	border: 0 !important;
+	background: transparent !important;
+}
+.sidebar-content ul ul ul a:hover {
+	color: var(--uw-text) !important;
+	background: transparent !important;
+}
+
+/* active 링크 — preview의 gradient + 색 */
+.sidebar-content a[aria-current='page'] {
+	background: linear-gradient(to right, var(--uw-accent-bg), transparent) !important;
+	color: var(--uw-accent) !important;
+	font-weight: 600 !important;
+	border-radius: 6px !important;
+	padding-left: 28px !important;
+	margin-left: -8px !important;
+}
+
+/* ============ Main 영역 ============ */
+.main-frame {
+	background: var(--uw-bg);
+}
+.main-pane {
+	background: var(--uw-bg);
+}
+
+/* 페이지 안쪽 패딩 — preview의 48px 56px 80px */
+.content-panel {
+	padding: 48px 56px 80px !important;
+}
+.content-panel + .content-panel {
+	border-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+/* ============ H1 ============ */
+.content-panel h1,
+.sl-markdown-content h1 {
+	font-size: 34px !important;
+	font-weight: 800 !important;
+	letter-spacing: -0.04em !important;
+	line-height: 1.3 !important;
+	color: #0a0a0a !important;
+	margin: 0 0 24px !important;
+}
+
+/* ============ 본문 ============ */
+.sl-markdown-content {
+	font-size: 16px;
+	line-height: 1.75;
+	color: var(--uw-text);
+}
+
+/* H2 */
+:where(.sl-markdown-content) h2 {
+	font-size: 24px !important;
+	font-weight: 700 !important;
+	letter-spacing: -0.03em !important;
+	margin: 56px 0 16px !important;
+	padding-top: 24px !important;
+	border-top: 1px solid var(--uw-border-soft) !important;
+	color: #0a0a0a !important;
+	line-height: 1.4 !important;
+}
+:where(.sl-markdown-content) > h2:first-child,
+:where(.sl-markdown-content) > :first-child + h2 {
+	border-top: 0 !important;
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+}
+
+/* H3 */
+:where(.sl-markdown-content) h3 {
+	font-size: 18px !important;
+	font-weight: 700 !important;
+	letter-spacing: -0.02em !important;
+	margin: 32px 0 12px !important;
+	color: var(--uw-text) !important;
+	line-height: 1.5 !important;
+}
+
+/* P */
+:where(.sl-markdown-content) p {
+	margin: 0 0 16px !important;
+}
+
+/* ============ Lead 박스 (첫 blockquote) ============ */
+.sl-markdown-content > blockquote:first-of-type,
+.sl-markdown-content > p:first-of-type + blockquote {
+	font-size: 17px !important;
+	line-height: 1.7 !important;
+	padding: 18px 22px !important;
+	background: var(--uw-bg-soft) !important;
+	border-left: 4px solid var(--uw-accent) !important;
+	border-radius: 4px !important;
+	margin: 0 0 40px !important;
+	color: var(--uw-text-soft) !important;
+	font-style: normal !important;
+}
+.sl-markdown-content > blockquote:first-of-type p {
+	margin: 0 !important;
+	color: var(--uw-text-soft) !important;
+}
+.sl-markdown-content > blockquote:first-of-type strong {
+	color: #222 !important;
+}
+
+/* ============ 일반 blockquote ============ */
+:where(.sl-markdown-content) blockquote {
+	border-left: 3px solid #d4d4d8;
+	background: var(--uw-bg-soft);
+	padding: 14px 18px;
+	margin: 20px 0;
+	border-radius: 6px;
+	font-size: 14.5px;
+	color: var(--uw-text-soft);
+	font-style: normal;
+}
+:where(.sl-markdown-content) blockquote p {
+	margin: 0 !important;
+}
+:where(.sl-markdown-content) blockquote p + p {
+	margin-top: 8px !important;
+}
+
+/* ============ Lists ============ */
+:where(.sl-markdown-content) ol,
+:where(.sl-markdown-content) ul {
+	padding-left: 22px !important;
+	margin: 0 0 20px !important;
+}
+:where(.sl-markdown-content) li {
+	margin: 6px 0 !important;
+}
+:where(.sl-markdown-content) ol li::marker {
+	color: var(--uw-text-mute);
+	font-weight: 600;
+}
+
+/* ============ Inline code ============ */
+:where(.sl-markdown-content) :not(pre) > code {
+	background: var(--uw-bg-code);
+	border: 1px solid var(--uw-border);
+	border-radius: 4px;
+	padding: 1px 6px;
+	font-size: 13.5px;
+	color: #be185d;
+	font-family: 'JetBrains Mono', Menlo, Consolas, monospace;
+}
+
+/* ============ Code blocks ============ */
+.expressive-code {
+	margin: 0 0 20px !important;
+	border-radius: 10px !important;
+}
+
+/* ============ Tables ============ */
+:where(.sl-markdown-content) table {
+	font-size: 14.5px;
+	border-collapse: collapse;
+	margin: 16px 0;
+	width: 100%;
+}
+:where(.sl-markdown-content) th {
+	background: var(--uw-bg-soft);
+	font-weight: 700;
+	text-align: left;
+	color: #222;
+}
+:where(.sl-markdown-content) th,
+:where(.sl-markdown-content) td {
+	padding: 10px 14px;
+	border: 1px solid var(--uw-border);
+}
+
+/* ============ Links 본문 ============ */
+:where(.sl-markdown-content) a {
+	color: var(--uw-accent) !important;
+	text-decoration: none !important;
+	border-bottom: 1px solid transparent !important;
+}
+:where(.sl-markdown-content) a:hover {
+	border-bottom-color: var(--uw-accent) !important;
+}
+
+/* ============ HR ============ */
+:where(.sl-markdown-content) hr {
+	border: 0 !important;
+	border-top: 1px solid var(--uw-border-soft) !important;
+	margin: 32px 0 !important;
+}
+
+/* ============ 이미지 placeholder ============ */
+.img-placeholder {
+	margin: 24px 0;
+	padding: 60px 20px;
+	background: repeating-linear-gradient(
+		45deg,
+		#f8f8f8,
+		#f8f8f8 10px,
+		#f0f0f0 10px,
+		#f0f0f0 20px
+	);
+	border: 1px dashed #d4d4d8;
+	border-radius: 10px;
+	text-align: center;
+	color: var(--uw-text-mute);
+	font-size: 13px;
+	font-weight: 500;
+}
+
+/* ============ mark ============ */
+:where(.sl-markdown-content) mark {
+	background: linear-gradient(180deg, transparent 60%, var(--uw-highlight) 60%);
+	padding: 0 2px;
+	font-weight: 600;
+	color: inherit;
+}
+
+/* ============ TOC (우) ============ */
+.right-sidebar {
+	border-left: 0 !important;
+}
+.right-sidebar-panel {
+	padding: 48px 28px 32px !important;
+}
+.right-sidebar-panel h2 {
+	font-size: 12px !important;
+	font-weight: 700 !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.05em !important;
+	color: var(--uw-text-mute) !important;
+	margin-bottom: 12px !important;
+}
+.right-sidebar-panel a {
+	font-size: 13px !important;
+	color: var(--uw-text-soft) !important;
+	padding: 5px 0 5px 10px !important;
+	margin-left: -12px !important;
+	border-left: 2px solid transparent !important;
+	display: block !important;
+	line-height: 1.4 !important;
+}
+.right-sidebar-panel a:hover {
+	color: var(--uw-text) !important;
+}
+.right-sidebar-panel a[aria-current='true'] {
+	color: var(--uw-accent) !important;
+	border-left-color: var(--uw-accent) !important;
+	font-weight: 600 !important;
+}
+
+/* ============ Pagination ============ */
+.pagination-links {
+	margin-top: 48px;
+	padding-top: 24px;
+	border-top: 1px solid var(--uw-border) !important;
+}
+.pagination-links a {
+	background: var(--uw-bg) !important;
+	border: 1px solid var(--uw-border) !important;
+	color: var(--uw-text) !important;
+	border-radius: 6px !important;
+}
+.pagination-links a:hover {
+	border-color: var(--uw-accent) !important;
+	color: var(--uw-accent) !important;
+}
+
+/* ============ Aside ============ */
+.starlight-aside {
+	border-radius: 6px;
+}
+
+/* ============ 헤딩 앵커 링크 숨김 (preview처럼) ============ */
+.sl-markdown-content .sl-anchor-link,
+.sl-markdown-content .sl-anchor-link::after,
+.sl-anchor-link {
+	display: none !important;
+}
+.sl-heading-wrapper {
+	display: block !important;
+}
+/* 헤딩 자체에서 hover 시에도 표시 안 함 */
+:where(.sl-markdown-content) h1:hover .sl-anchor-link,
+:where(.sl-markdown-content) h2:hover .sl-anchor-link,
+:where(.sl-markdown-content) h3:hover .sl-anchor-link {
+	display: none !important;
+}
+
+/* ============ 외부 링크 ↗ 아이콘 ============ */
+:where(.sl-markdown-content) a[rel~='noopener'][target='_blank'] {
+	white-space: normal;
+}
+:where(.sl-markdown-content) a[rel~='noopener'][target='_blank']::after {
+	display: inline-block;
+	transform: translateY(-1px);
+	opacity: 0.7;
+	font-size: 0.85em;
+	margin-left: 1px;
+}
