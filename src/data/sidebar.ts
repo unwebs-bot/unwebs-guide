@@ -217,6 +217,7 @@ sections.push({
 				{ slug: 'design-system-basics', label: '디자인 시스템·토큰' },
 				{ slug: 'design-color-typo', label: '컬러·타이포 잡는 법' },
 				{ slug: 'design-webfont', label: '웹폰트 적용·성능' },
+				{ slug: 'design-image-optimization', label: '이미지·미디어 최적화' },
 				{ slug: 'design-responsive-grid', label: '반응형 그리드·레이아웃' },
 			],
 		},
@@ -231,6 +232,7 @@ sections.push({
 		{
 			label: '디자인 원칙',
 			items: [
+				{ slug: 'design-visual-hierarchy', label: '시각 위계·레이아웃 원리' },
 				{ slug: 'design-mobile-first', label: '모바일 우선 디자인' },
 				{ slug: 'design-accessibility', label: '웹 접근성 기초' },
 			],
@@ -238,8 +240,11 @@ sections.push({
 		{
 			label: '실전 패턴',
 			items: [
+				{ slug: 'design-landing-structure', label: '전환되는 랜딩페이지 구조' },
+				{ slug: 'design-form-conversion', label: '문의·예약 폼 전환 설계' },
 				{ slug: 'design-portfolio-style', label: '업종별 디자인 패턴' },
 				{ slug: 'design-reference-sites', label: '참고 사이트 찾는 법' },
+				{ slug: 'design-qa-checklist', label: '디자인 검수·QA 체크리스트' },
 			],
 		},
 	],
