@@ -64,12 +64,25 @@ a:visited { color: inherit; }
 	padding: 0 28px;
 }
 .gnb-logo {
-	font-weight: 700; font-size: 16px;
-	letter-spacing: -0.04em;
-	color: var(--text);
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
 	text-decoration: none;
 }
-.gnb-logo .accent { color: var(--accent); }
+.gnb-logo-img {
+	height: 22px;
+	width: auto;
+	display: block;
+}
+.gnb-logo-text {
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	color: var(--text-soft);
+	padding-left: 10px;
+	border-left: 1px solid var(--border);
+	line-height: 1;
+}
 .gnb-divider {
 	color: var(--text-mute);
 	margin: 0 12px;
