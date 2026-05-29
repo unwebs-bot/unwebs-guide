@@ -204,6 +204,7 @@ sections.push({
 				{ slug: 'planning-sitemap', label: '사이트맵·정보 구조 설계' },
 				{ slug: 'planning-wireframe', label: '와이어프레임 도구' },
 				{ slug: 'planning-requirements', label: '의뢰 전 요구사항 정리' },
+				{ slug: 'planning-client-assets', label: '의뢰 자료 준비 체크리스트' },
 			],
 		},
 		{
@@ -211,6 +212,16 @@ sections.push({
 			items: [
 				{ slug: 'design-system-basics', label: '디자인 시스템·토큰' },
 				{ slug: 'design-color-typo', label: '컬러·타이포 잡는 법' },
+				{ slug: 'design-webfont', label: '웹폰트 적용·성능' },
+				{ slug: 'design-responsive-grid', label: '반응형 그리드·레이아웃' },
+			],
+		},
+		{
+			label: '콘텐츠 · 카피',
+			items: [
+				{ slug: 'design-content-strategy', label: '콘텐츠 우선 디자인' },
+				{ slug: 'design-copywriting', label: '웹사이트 카피라이팅' },
+				{ slug: 'design-ux-writing', label: 'UX 라이팅·마이크로카피' },
 			],
 		},
 		{
@@ -218,7 +229,6 @@ sections.push({
 			items: [
 				{ slug: 'design-mobile-first', label: '모바일 우선 디자인' },
 				{ slug: 'design-accessibility', label: '웹 접근성 기초' },
-				{ slug: 'design-content-strategy', label: '콘텐츠 우선 디자인' },
 			],
 		},
 		{
