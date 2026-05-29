@@ -55,7 +55,7 @@ status: draft
 
 생성된 데이터 스트림 화면에서 **측정 ID** 확인. `G-XXXXXXXXXX` 형식.
 
-<figure class="img-placeholder">📷 캡처 예정: GA4 측정 ID 위치</figure>
+![GA4 측정 ID 위치](/imweb/dc6ff7ba85154.png)
 
 **메모장에 복사**.
 
@@ -71,8 +71,6 @@ status: draft
 2. **Google Analytics** 항목 찾기.
 3. **측정 ID** 입력란에 `G-XXXXXXXXXX` 붙여넣기.
 4. **저장**.
-
-<figure class="img-placeholder">📷 캡처 예정: 아임웹 GA4 측정 ID 입력</figure>
 
 ### 방법 B: 직접 코드 삽입 (고급)
 

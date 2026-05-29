@@ -43,7 +43,7 @@ status: draft
 3. **HTML 태그** 방식으로 소유 확인 메타태그 복사.
 4. 아임웹 관리자 → **환경설정 > SEO > 고급 설정**의 **Header Code** 상단에 메타태그 붙여넣고 저장.
 
-<figure class="img-placeholder">📷 캡처 예정: 네이버 서치어드바이저 사이트 추가 화면</figure>
+![네이버 서치어드바이저 사이트 추가 화면](/imweb/6857658addbf8.png)
 
 5. 서치어드바이저로 돌아가 **확인** 버튼.
 6. **자동 등록 방지 문자** 입력 → 등록 완료.
@@ -56,8 +56,6 @@ status: draft
 2. **URL 접두어 유형**에 도메인 입력 (`https://mycompany.com`).
 3. **HTML 태그** 선택 → 메타태그 복사.
 4. 아임웹 SEO 고급 설정의 Header Code 상단에 추가 → 저장.
-
-<figure class="img-placeholder">📷 캡처 예정: Google Search Console 소유권 확인</figure>
 
 5. Search Console에서 **확인** → 완료.
 
@@ -112,7 +110,7 @@ status: draft
 2. **요청 > 사이트맵 제출** → 복사한 주소 붙여넣기 → **확인**.
 3. **요청 > RSS 제출**도 같이. RSS는 새 글 색인 속도를 빠르게 합니다.
 
-<figure class="img-placeholder">📷 캡처 예정: 네이버 서치어드바이저 사이트맵 제출</figure>
+![네이버 서치어드바이저 사이트맵 제출](/imweb/3c80f4f183622.png)
 
 > 💡 사이트맵 미제출이어도 검색은 됩니다. 다만 **내부 링크가 없는 페이지**(예: 캠페인 랜딩)는 제출해야 발견됩니다.
 
@@ -130,7 +128,7 @@ status: draft
 4. **페이지 제목**과 **페이지 설명** 입력.
 5. 닫기(✕) → 자동 저장.
 
-<figure class="img-placeholder">📷 캡처 예정: 메뉴별 페이지 제목·설명 설정</figure>
+![메뉴별 페이지 제목·설명 설정](/imweb/9b196b26aadac.png)
 
 ### 권장 글자수 & 작성 팁
 
@@ -181,7 +179,7 @@ status: draft
 - **PNG, 1200×630px** 권장.
 - 페이지별로도 메뉴 설정에서 **메뉴 대표이미지** 따로 지정 가능.
 
-<figure class="img-placeholder">📷 캡처 예정: 대표 이미지 설정 (Open Graph)</figure>
+![대표 이미지 설정 (Open Graph)](/imweb/372534e6e3e7f.png)
 
 ---
 

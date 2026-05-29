@@ -63,7 +63,7 @@ status: draft
 - 영업일 기준 **3~7일** 소요.
 - 결과는 신청자 휴대폰으로 **SMS 알림**.
 
-<figure class="img-placeholder">📷 캡처 예정: 발신번호 등록 단계</figure>
+![발신번호 등록 단계](/imweb/b9f3b79b579c4.png)
 
 ### 4단계: 등록 완료 후
 

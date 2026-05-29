@@ -36,7 +36,7 @@ status: draft
 
 관리자 → **환경설정 > 자동 메일** (또는 **사용자 관리 > 자동 메일**)
 
-<figure class="img-placeholder">📷 캡처 예정: 자동 메일 설정 화면</figure>
+![자동 메일 설정 화면](/imweb/9327023f16d35.png)
 
 ---
 

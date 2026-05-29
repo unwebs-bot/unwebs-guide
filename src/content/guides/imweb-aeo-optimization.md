@@ -39,8 +39,6 @@ status: draft
 2. **AI 검색 허용** 옵션 켜기.
 3. 저장.
 
-<figure class="img-placeholder">📷 캡처 예정: AI 검색 허용 옵션</figure>
-
 ### 2단계: llms.txt 활성화
 
 `llms.txt`는 AI 크롤러를 위한 새로운 표준 파일로, AI가 우리 사이트의 어떤 콘텐츠를 우선 학습할지 알려줍니다.

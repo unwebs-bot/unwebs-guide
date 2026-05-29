@@ -22,7 +22,7 @@ status: draft
 
 디자인 모드 좌측 상단의 **메뉴 관리(≡)** 아이콘 클릭.
 
-<figure class="img-placeholder">📷 캡처 예정: 메뉴 관리 패널 위치</figure>
+![메뉴 관리 패널 위치](/imweb/3549d837c8d93.png)
 
 상단 메뉴 / 하단 메뉴 / 모달이 분리되어 있어요.
 
@@ -52,7 +52,7 @@ status: draft
 
 메뉴를 다른 메뉴의 **오른쪽으로 드래그**하면 하위 메뉴(드롭다운)가 됩니다. 상단 메뉴 공간이 부족할 때 유용.
 
-<figure class="img-placeholder">📷 캡처 예정: 메뉴 드래그로 순서 변경</figure>
+![메뉴 드래그로 순서 변경](/imweb/66a1c0bdff084.gif)
 
 ### 표시 위치 규칙
 
@@ -65,7 +65,7 @@ status: draft
 
 메뉴 옆의 **ⓘ 아이콘** 클릭 (또는 메뉴 우클릭 → 메뉴 설정).
 
-<figure class="img-placeholder">📷 캡처 예정: 메뉴 설정 창</figure>
+![메뉴 설정 창](/imweb/9b196b26aadac.png)
 
 ### 메뉴 설정 항목
 

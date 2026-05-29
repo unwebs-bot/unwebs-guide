@@ -51,8 +51,6 @@ status: draft
 
 생성 후 16자리 픽셀 ID 표시됨. **메모장에 복사**.
 
-<figure class="img-placeholder">📷 캡처 예정: 메타 픽셀 ID 생성 화면</figure>
-
 ---
 
 ## 2단계: 아임웹에 픽셀 설치
@@ -65,8 +63,6 @@ status: draft
 2. **페이스북(Meta) 픽셀 ID** 항목 찾기.
 3. 16자리 ID 입력.
 4. **저장**.
-
-<figure class="img-placeholder">📷 캡처 예정: 아임웹 픽셀 ID 입력란</figure>
 
 ### 방법 B: 직접 코드 삽입 (고급, 커스텀 이벤트 필요 시)
 

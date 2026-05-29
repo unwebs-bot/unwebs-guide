@@ -79,7 +79,7 @@ status: draft
 3. 신청할 도메인 선택.
 4. **SSL 신청** 버튼.
 
-<figure class="img-placeholder">📷 캡처 예정: SSL 신청 화면</figure>
+![SSL 신청 화면](/imweb/018aeb9dfbe4a.png)
 
 ### 3단계: 종류 선택·결제
 

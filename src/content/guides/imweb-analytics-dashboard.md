@@ -22,7 +22,7 @@ status: draft
 
 관리자 → **사용자 관리 > 통계** (또는 좌측 메뉴의 통계 그룹).
 
-<figure class="img-placeholder">📷 캡처 예정: 아임웹 통계 대시보드</figure>
+![아임웹 통계 대시보드](/imweb/7e3e705ec309c.png)
 
 ---
 

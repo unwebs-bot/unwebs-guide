@@ -24,7 +24,7 @@ status: draft
 
 디자인 모드 우측 상단 **톱니바퀴 아이콘** → **공통 디자인 설정**.
 
-<figure class="img-placeholder">📷 캡처 예정: 공통 디자인 설정 진입</figure>
+![공통 디자인 설정 진입](/imweb/745144d03f4dc.png)
 
 ### 설정 항목 (5분류)
 
@@ -80,7 +80,7 @@ status: draft
    - **`<link>` 태그** (HTML 코드, 위쪽)
    - **`font-family: '...'`** (CSS 코드)
 
-<figure class="img-placeholder">📷 캡처 예정: Google Fonts 코드 복사</figure>
+![Google Fonts 코드 복사](/imweb/b3c85a5800241.png)
 
 > ⚠️ 한글 지원 폰트인지 반드시 확인. 영문 전용 폰트를 한글에 적용하면 시스템 폰트로 fallback돼서 의도와 달라집니다.
 
@@ -131,7 +131,7 @@ status: draft
    - 버튼 모서리(라운드)
    - 좌우/상하 패딩
 
-<figure class="img-placeholder">📷 캡처 예정: 버튼 스타일 설정</figure>
+![버튼 스타일 설정](/imweb/6eaf8a97b9502.png)
 
 4. **저장**.
 

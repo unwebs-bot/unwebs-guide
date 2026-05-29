@@ -79,7 +79,7 @@ status: draft
 2. 이미지 선택 → 업로드.
 3. **저장**.
 
-<figure class="img-placeholder">📷 캡처 예정: 대표 이미지 업로드</figure>
+![대표 이미지 업로드](/imweb/372534e6e3e7f.png)
 
 ---
 

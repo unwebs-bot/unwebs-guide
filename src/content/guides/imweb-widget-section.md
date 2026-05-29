@@ -59,7 +59,7 @@ status: draft
 2. 카테고리에서 원하는 템플릿 선택 → **추가**.
 3. 텍스트·이미지만 본인 콘텐츠로 교체.
 
-<figure class="img-placeholder">📷 캡처 예정: 섹션 템플릿 선택 화면</figure>
+![섹션 템플릿 선택 화면](/imweb/d63b523f75823.png)
 
 > 💡 빈 페이지에서 시작하기 막막하면 **템플릿으로 골격 잡고 디테일 수정**하는 흐름이 빠릅니다.
 
@@ -162,7 +162,7 @@ status: draft
 ### 5. 삭제
 위젯 우클릭 → **위젯 삭제**.
 
-<figure class="img-placeholder">📷 캡처 예정: 위젯 우클릭 메뉴</figure>
+![위젯 우클릭 메뉴](/imweb/a88d3f46e2194.png)
 
 ---
 

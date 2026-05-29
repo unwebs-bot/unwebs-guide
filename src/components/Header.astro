@@ -41,7 +41,8 @@ const { section = '아임웹 운영' } = Astro.props;
 			if (window.pagefind) return window.pagefind;
 			try {
 				// @ts-ignore — Pagefind 인덱스는 빌드 후 /pagefind/ 에 생성됨
-				const mod = await import(/* @vite-ignore */ '/pagefind/pagefind.js');
+				const path = '/pagefind/pagefind.js';
+				const mod = await import(/* @vite-ignore */ path);
 				window.pagefind = mod;
 				return mod;
 			} catch {

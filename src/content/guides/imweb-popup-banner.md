@@ -34,7 +34,7 @@ status: draft
 
 비주얼섹션 우클릭 → **비주얼 설정**.
 
-<figure class="img-placeholder">📷 캡처 예정: 비주얼섹션 설정 창</figure>
+![비주얼섹션 설정 창](/imweb/51603dc864e84.png)
 
 - **+ 새로운 슬라이드**: 슬라이드 추가
 - **드래그**: 순서 변경
@@ -75,7 +75,7 @@ status: draft
 1. 관리자 → **환경설정 > 팝업**.
 2. **+ 팝업 추가** 버튼.
 
-<figure class="img-placeholder">📷 캡처 예정: 팝업 설정 화면</figure>
+![팝업 설정 화면](/imweb/6898904ac981e.png)
 
 ### 주요 설정
 

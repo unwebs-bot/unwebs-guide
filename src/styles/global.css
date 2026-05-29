@@ -343,6 +343,17 @@ a:visited { color: inherit; }
 	font-weight: 600;
 }
 
+/* article images */
+.article img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 20px 0;
+	border: 1px solid var(--border);
+	border-radius: var(--radius-lg);
+}
+.article p > img:only-child { margin: 20px auto; }
+
 /* image placeholder */
 .img-placeholder {
 	margin: 24px 0;

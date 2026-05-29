@@ -31,7 +31,7 @@ status: draft
 
 입력폼 위젯 **우클릭** → **입력폼 설정**.
 
-<figure class="img-placeholder">📷 캡처 예정: 입력폼 설정 창</figure>
+![입력폼 설정 창](/imweb/6c9b4aa866845.png)
 
 ---
 
@@ -79,7 +79,7 @@ status: draft
 
 > ⚠️ **자동 메일 내용은 사용자가 직접 수정할 수 없습니다.** 미리보기 모드에서 발송 메일을 확인하세요.
 
-<figure class="img-placeholder">📷 캡처 예정: 자동 메일 발송 옵션</figure>
+![자동 메일 발송 옵션](/imweb/74e9425deade5.png)
 
 ### 자동 SMS 발송
 
