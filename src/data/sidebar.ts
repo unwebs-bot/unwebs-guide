@@ -75,6 +75,7 @@ export const sections: SidebarSection[] = [
 				items: [
 					{ slug: 'seo-fundamentals', label: 'SEO란? 검색엔진 동작 원리' },
 					{ slug: 'seo-keyword-research', label: '키워드 리서치' },
+					{ slug: 'seo-search-intent', label: '검색 의도 4가지' },
 					{ slug: 'seo-onpage', label: '온페이지 SEO' },
 				],
 			},
@@ -83,6 +84,15 @@ export const sections: SidebarSection[] = [
 				items: [
 					{ slug: 'seo-technical', label: '기술 SEO 체크리스트' },
 					{ slug: 'seo-mobile-cwv', label: 'Core Web Vitals + 모바일' },
+					{ slug: 'seo-url-design', label: '검색 친화 URL 설계' },
+					{ slug: 'seo-javascript', label: 'JavaScript·SPA SEO' },
+					{ slug: 'seo-structured-data', label: '구조화 데이터(schema)' },
+				],
+			},
+			{
+				label: '측정 · 분석',
+				items: [
+					{ slug: 'seo-search-console', label: 'Search Console 성과 측정' },
 				],
 			},
 			{
@@ -97,6 +107,7 @@ export const sections: SidebarSection[] = [
 				label: 'AEO · AI 검색',
 				items: [
 					{ slug: 'aeo-fundamentals', label: 'AEO/GEO란?' },
+					{ slug: 'aeo-cep', label: 'CEP 검색 상황 공략' },
 					{ slug: 'aeo-chatgpt', label: 'ChatGPT·Perplexity 노출' },
 					{ slug: 'aeo-llms-txt', label: 'llms.txt 작성법' },
 					{ slug: 'aeo-faq-schema', label: 'FAQ schema 추가' },
@@ -106,6 +117,8 @@ export const sections: SidebarSection[] = [
 				label: '콘텐츠·링크',
 				items: [
 					{ slug: 'seo-content-strategy', label: '검색 잘되는 콘텐츠' },
+					{ slug: 'seo-topic-clusters', label: '토픽 클러스터' },
+					{ slug: 'seo-eeat', label: 'E-E-A-T·도움되는 콘텐츠' },
 					{ slug: 'seo-link-building', label: '백링크 전략' },
 				],
 			},
