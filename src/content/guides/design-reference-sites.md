@@ -45,7 +45,7 @@ status: draft
 
 랜딩 페이지 전문.
 - 장점: 전환 중심 사이트
-- 추천: SaaS·1인 사업
+- 추천: SaaS·개인 사업
 
 ### 4. Httpster (httpster.net)
 
