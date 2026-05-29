@@ -93,12 +93,14 @@ export const sections: SidebarSection[] = [
 				label: '측정 · 분석',
 				items: [
 					{ slug: 'seo-search-console', label: 'Search Console 성과 측정' },
+					{ slug: 'aeo-measurement', label: 'AI 검색 인용 측정' },
 				],
 			},
 			{
 				label: '검색엔진별',
 				items: [
 					{ slug: 'seo-naver-deep', label: '네이버 SEO 심화' },
+					{ slug: 'seo-naver-rich-results', label: '네이버 리치결과·캐러셀' },
 					{ slug: 'seo-google-deep', label: '구글 SEO 심화' },
 					{ slug: 'seo-local', label: '로컬 SEO (병원·지역업)' },
 				],
@@ -108,7 +110,9 @@ export const sections: SidebarSection[] = [
 				items: [
 					{ slug: 'aeo-fundamentals', label: 'AEO/GEO란?' },
 					{ slug: 'aeo-cep', label: 'CEP 검색 상황 공략' },
+					{ slug: 'aeo-citability', label: 'AI가 인용하는 글 구조' },
 					{ slug: 'aeo-chatgpt', label: 'ChatGPT·Perplexity 노출' },
+					{ slug: 'aeo-external-visibility', label: '커뮤니티·리스티클 노출' },
 					{ slug: 'aeo-llms-txt', label: 'llms.txt 작성법' },
 					{ slug: 'aeo-faq-schema', label: 'FAQ schema 추가' },
 				],
