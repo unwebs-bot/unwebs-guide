@@ -97,6 +97,9 @@ const schemas = [breadcrumb, article, ...(faqPage ? [faqPage] : [])];
 				<article class="article">
 					<h1>{title}</h1>
 					<slot />
+					<footer class="article-footer">
+						작성·운영 — <strong>언웹스 가이드센터</strong>. 실무에서 검증한 내용을 정리하고 정기적으로 업데이트합니다. <a href="/about/">가이드센터 소개 →</a>
+					</footer>
 				</article>
 			</div>
 		</main>

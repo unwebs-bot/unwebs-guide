@@ -3,9 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 import { sections } from '../data/sidebar';
+
+const site = Astro.site ?? new URL('https://guide.unwebs.co.kr');
+const websiteSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	name: '언웹스 가이드센터',
+	url: site.href,
+	inLanguage: 'ko',
+};
 ---
 
-<BaseLayout title="언웹스 가이드센터" description="기업·병원·소개형 홈페이지 운영자를 위한 실무 가이드.">
+<BaseLayout title="언웹스 가이드센터" description="기업·병원·소개형 홈페이지 운영자를 위한 실무 가이드." schemas={[websiteSchema]}>
 	<Header section="가이드센터" />
 	<div class="layout">
 		<Sidebar />
@@ -34,6 +43,10 @@ import { sections } from '../data/sidebar';
 							))}
 						</>
 					))}
+
+					<footer class="article-footer">
+						이 가이드센터는 <strong>언웹스</strong>가 작성·운영합니다. <a href="/about/">가이드센터 소개 →</a>
+					</footer>
 				</article>
 			</div>
 		</main>
