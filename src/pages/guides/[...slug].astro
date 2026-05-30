@@ -13,6 +13,24 @@ export async function getStaticPaths() {
 const { guide } = Astro.props;
 const { Content, headings } = await render(guide);
 const slug = guide.id.replace(/\.md$/, '');
+
+function parseFaqs(body: string): { q: string; a: string }[] {
+	const faqs: { q: string; a: string }[] = [];
+	const re = /\*\*Q\.\s*(.+?)\*\*\s*\n+A\.\s*(.+?)(?=\n\n|\n\*\*Q\.|\n##|\n---|$)/gs;
+	let m: RegExpExecArray | null;
+	while ((m = re.exec(body)) !== null) {
+		const q = m[1].trim();
+		const a = m[2]
+			.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+			.replace(/\*\*([^*]+)\*\*/g, '$1')
+			.replace(/`([^`]+)`/g, '$1')
+			.replace(/\s+/g, ' ')
+			.trim();
+		if (q && a) faqs.push({ q, a });
+	}
+	return faqs;
+}
+const faqs = parseFaqs(guide.body ?? '');
 ---
 
 <GuideLayout
@@ -20,6 +38,7 @@ const slug = guide.id.replace(/\.md$/, '');
 	description={guide.data.description}
 	slug={slug}
 	headings={headings}
+	faqs={faqs}
 >
 	<Content />
 </GuideLayout>

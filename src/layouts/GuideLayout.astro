@@ -10,22 +10,67 @@ interface Heading {
 	slug: string;
 	text: string;
 }
+interface Faq {
+	q: string;
+	a: string;
+}
 interface Props {
 	title: string;
 	description?: string;
 	slug: string;
 	headings: Heading[];
+	faqs?: Faq[];
 }
-const { title, description, slug, headings } = Astro.props;
+const { title, description, slug, headings, faqs = [] } = Astro.props;
 
 const section = sections.find((s) =>
 	s.groups.some((g) => g.items.some((i) => i.slug === slug))
 );
 const group = section?.groups.find((g) => g.items.some((i) => i.slug === slug));
 const itemLabel = group?.items.find((i) => i.slug === slug)?.label ?? title;
+
+const site = Astro.site ?? new URL('https://guide.unwebs.co.kr');
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL('/unwebs-logo.png', site).href;
+
+const breadcrumb = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: '가이드센터', item: site.href },
+		{ '@type': 'ListItem', position: 2, name: itemLabel, item: canonical },
+	],
+};
+const article = {
+	'@context': 'https://schema.org',
+	'@type': 'TechArticle',
+	headline: title,
+	description: description ?? '',
+	inLanguage: 'ko',
+	url: canonical,
+	author: { '@type': 'Organization', name: '언웹스' },
+	publisher: {
+		'@type': 'Organization',
+		name: '언웹스',
+		logo: { '@type': 'ImageObject', url: ogImage },
+	},
+};
+const faqPage =
+	faqs.length > 0
+		? {
+				'@context': 'https://schema.org',
+				'@type': 'FAQPage',
+				mainEntity: faqs.map((f) => ({
+					'@type': 'Question',
+					name: f.q,
+					acceptedAnswer: { '@type': 'Answer', text: f.a },
+				})),
+			}
+		: null;
+const schemas = [breadcrumb, article, ...(faqPage ? [faqPage] : [])];
 ---
 
-<BaseLayout title={`${title} — 언웹스 가이드센터`} description={description}>
+<BaseLayout title={`${title} — 언웹스 가이드센터`} description={description} schemas={schemas}>
 	<Header section={section?.label ?? '가이드센터'} />
 	<div class="layout">
 		<Sidebar currentSlug={slug} />
