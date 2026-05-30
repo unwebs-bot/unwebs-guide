@@ -16,6 +16,10 @@ export const sections: SidebarSection[] = [
 		label: '아임웹 운영',
 		groups: [
 			{
+				label: '전체 가이드',
+				items: [{ slug: 'imweb-overview', label: '아임웹 운영 완벽 가이드' }],
+			},
+			{
 				label: '도메인·SSL·메일',
 				items: [
 					{ slug: 'imweb-domain-connect', label: '내 도메인 연결하기' },
@@ -70,6 +74,10 @@ export const sections: SidebarSection[] = [
 	{
 		label: 'SEO · AEO',
 		groups: [
+			{
+				label: '전체 가이드',
+				items: [{ slug: 'seo-overview', label: '홈페이지 SEO·AI 검색 완벽 가이드' }],
+			},
 			{
 				label: 'SEO 기초',
 				items: [
@@ -133,6 +141,10 @@ export const sections: SidebarSection[] = [
 sections.push({
 	label: 'WordPress 운영',
 	groups: [
+		{
+			label: '전체 가이드',
+			items: [{ slug: 'wp-overview', label: 'WordPress 운영 완벽 가이드' }],
+		},
 		{
 			label: '입문',
 			items: [
@@ -202,6 +214,10 @@ sections.push({
 sections.push({
 	label: '기획 & 디자인',
 	groups: [
+		{
+			label: '전체 가이드',
+			items: [{ slug: 'design-overview', label: '홈페이지 기획·디자인 완벽 가이드' }],
+		},
 		{
 			label: '기획',
 			items: [
