@@ -79,10 +79,14 @@ a:visited { color: inherit; }
 	font-weight: 600;
 	letter-spacing: -0.03em;
 	color: var(--text-soft);
+	margin-left: 10px;
 	padding-left: 10px;
 	border-left: 1px solid var(--border);
 	line-height: 1;
+	text-decoration: none;
+	transition: color .15s;
 }
+.gnb-logo-text:hover { color: var(--text); }
 .gnb-divider {
 	color: var(--text-mute);
 	margin: 0 12px;
@@ -419,6 +423,30 @@ a:visited { color: inherit; }
 	margin-left: -12px;
 	font-size: 12.5px;
 }
+
+/* TOC 하단 CTA — 프로젝트 문의 */
+.toc-cta {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	margin-top: 28px;
+	padding: 11px 14px;
+	background: var(--text);
+	color: #fff;
+	border-radius: var(--radius-lg);
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	text-decoration: none;
+	transition: background .15s, transform .15s, box-shadow .15s;
+}
+.toc-cta:hover {
+	background: #000;
+	transform: translateY(-1px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, .14);
+}
+.toc-cta-icon { width: 15px; height: 15px; flex-shrink: 0; }
 
 /* === Article footer === */
 .article-footer {
