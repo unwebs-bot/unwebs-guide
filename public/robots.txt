@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://guide.unwebs.co.kr/sitemap-index.xml
